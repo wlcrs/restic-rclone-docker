@@ -10,15 +10,17 @@
 
 Example command:
 
-   docker run \
-          -v "/opt/restic/my-rclone.conf:/config/rclone/rclone.conf:ro" \
-          -v "/opt/restic/cache:/cache:rw" \
-          -v "/mnt/mydata:/mydata:ro" \
-          --env-file "restic_environment.txt" \
-          wlcrs/restic-rclone:latest \
-          \
-          -r rclone:my-rclone-repo:my-tag \
-          --verbose backup \
-          -H nas \
-          /mydata
+```bash
+docker run \
+       -v "/opt/restic/my-rclone.conf:/config/rclone/rclone.conf:ro" \
+       -v "/opt/restic/cache:/cache:rw" \
+       -v "/mnt/mydata:/mydata:ro" \
+       --env-file "restic_environment.txt" \
+       wlcrs/restic-rclone:latest \
+       \
+       -r rclone:my-rclone-repo:my-tag \
+       --verbose backup \
+       -H nas \
+       /mydata
+```
        
